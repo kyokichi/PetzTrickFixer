@@ -211,11 +211,11 @@ public class TrickHelper
         new Trick(101, 572, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Flying Leap Right", Trick.Version.petz5)
     };
     
-    public static Trick searchForTrickBy(int plan, int action)
+    public static Trick searchForTrickBy(int plan, int action, Trick.Gesture gesture)
     {
         for(Trick z : allTricks)
         {
-            if(z.plan == plan && z.action == action)
+            if(z.plan == plan && z.action == action && z.gesture == gesture)
             {
                 return z;
             }

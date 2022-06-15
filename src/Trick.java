@@ -49,7 +49,7 @@ public class Trick
     {
         this(planID, actionID, direction, angle, association, gesture, flavor, "Unknown", Version.unknown);
         
-        Trick trick = TrickHelper.searchForTrickBy(planID, actionID);
+        Trick trick = TrickHelper.searchForTrickBy(planID, actionID, gesture);
         
         if(trick != null)
         {
