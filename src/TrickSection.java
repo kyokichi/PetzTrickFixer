@@ -66,19 +66,16 @@ public class TrickSection
         return s;
     }
     
-    public void updateEachTrickPlanBy(int amount)
+    public void fixTricksBy(Trick.Version version)
     {
-        for(Trick z : tricks)
+        for(Trick trick : tricks)
         {
-            z.updatePlan(amount);
-        }
-    }
-    
-    public void updateEachTrickActionBy(int amount)
-    {
-        for(Trick z : tricks)
-        {
-            z.updateAction(amount);
+            if(trick.ver != version)
+            {
+                trick.fixTrickBy(version);
+                System.out.println("Fixed Trick: " + trick);
+            }
+            // should also check if trick has the correct data values
         }
     }
     
@@ -99,6 +96,8 @@ public class TrickSection
             putConvertInt32ToByte(bTricks, i+16, z.association);
             
             i += 20;
+            
+            System.out.println();
         }
         
         return bTricks;
@@ -110,6 +109,9 @@ public class TrickSection
         bytes[i+2] = (byte) ((value >> 16) & 0xFF);
         bytes[i+1] = (byte) ((value >> 8) & 0xFF);
         bytes[i+0] = (byte) (value & 0xFF);
+        
+        System.out.printf("0x%x 0x%x 0x%x 0x%x \t",
+                bytes[i], bytes[i+1], bytes[i+2], bytes[i+3]);
     }
     
     

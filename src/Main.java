@@ -53,16 +53,45 @@ public class Main
     
     public static void main(String[] args) throws IOException
     {
-        //String filename = "data/petz/Leo.pet";
-        String filename = args[0];
+        /*String filename = "data/petz/Nibbles.pet";
+        String version = "4";
+        //String filename = args[0];
+        //String version = args[1];
+        fixAPet(filename, version);*/
         
-        trickSectionMain(filename);
         
-        // need something that reads the bin data 
+        //String path = "data/petz/";
+        String path = "."; 
+        readsAllPetzFromDir(path);
     }
     
     
-    public static void trickSectionMain(String filename) throws IOException
+    public static void fixAPet(String filename, String version) throws IOException
+    {
+        TrickSection tricks = getTrickSectionFrom(filename);
+        
+        //System.out.println(tricks);
+        trickSectionCSV(filename+"before", tricks);
+        
+        tricks.fixTricksBy(Trick.Version.valueOf("petz"+version));
+        
+        //System.out.println(tricks);
+        trickSectionCSV(filename+"after", tricks);
+    }
+    
+    
+    private static void trickSectionCSV(String name, TrickSection tricks) throws IOException
+    {
+        //output to a file as comma delimited csv
+        FileWriter fw = new FileWriter(name + ".csv");
+
+        fw.write(tricks.toString());
+
+        fw.close();
+    }
+    
+    
+    private static TrickSection getTrickSectionFrom(String filename) throws IOException
     {
         // later I should add something to choose this file maybe from args
         byte[] petData = readFile(filename);
@@ -70,18 +99,14 @@ public class Main
         // pointer to the start of the trick data section
         int start = findTrickSection(petData);
         
-        //output to a file as comma delimited csv
-        FileWriter fw = new FileWriter(filename + ".csv");
-        
         if(start != -1)
         {
-            TrickSection tricks = new TrickSection(petData, start);
-            //System.out.println(tricks);
-            fw.write(tricks.toString());
+            return new TrickSection(petData, start);
         }
         
-        fw.close();
+        return null;
     }
+    
     
     private static int findTrickSection(byte[] allBytes)
     {
@@ -133,17 +158,13 @@ public class Main
     
     
     
-    
-    
-    /** Unused function **/
     // could return some sort of list of files?
-    private static void readsAllPetzFromDir() throws IOException
+    private static void readsAllPetzFromDir(String path) throws IOException
     {
         // for each file in the directory
         // check the extension, should be .pet for now
         // then process the file
         
-        String path = "data/petz/";
         File dir = new File(path);
         File[] dirList = dir.listFiles();
         
@@ -154,13 +175,8 @@ public class Main
                 String name = f.getName();
                 if(name.length() > 4 && name.substring(name.length()-4).equals(".pet"))
                 {
-                    byte[] petFile = readFile(path+name);
-                    int start = findTrickSection(petFile);
-                    
-                    if(start != -1)
-                    {
-                        // process the files?
-                    }
+                    TrickSection tricks = getTrickSectionFrom(name);
+                    trickSectionCSV(name.substring(0, name.length()-4), tricks);
                 }
             }
         }
