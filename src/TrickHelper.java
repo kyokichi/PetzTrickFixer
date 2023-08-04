@@ -1,5 +1,8 @@
+
+import java.util.ArrayList;
+
 /**
- *
+ * TrickHelper is a basically a giant list that contains all the possible tricks from a spreadsheet.
  * @author Alexis
  */
 public class TrickHelper
@@ -32,27 +35,27 @@ public class TrickHelper
         new Trick(66, 430, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Rollover Left", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 432, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Sidestep Left", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 434, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Hop Left", Trick.Version.petz2, Trick.Species.dog),
-        new Trick(66, 435, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz2, Trick.Species.dog),
+        new Trick(66, 435, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 436, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz2, Trick.Species.dog),
         new Trick(69, 3, -1, -1, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Slide on Wall Left", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 429, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Rollover Right", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 431, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Sidestep Right", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 433, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Hop Right", Trick.Version.petz2, Trick.Species.dog),
-        new Trick(66, 435, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz2, Trick.Species.dog),
+        new Trick(66, 435, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz2, Trick.Species.dog),
         new Trick(66, 436, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz2, Trick.Species.dog),
         new Trick(69, 4, -1, -1, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Slide on Wall Right", Trick.Version.petz2, Trick.Species.dog),
         new Trick(67, 441, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Backflip", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 442, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Bounce", Trick.Version.petz2, Trick.Species.cat),
-        new Trick(67, 444, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Beg", Trick.Version.petz2, Trick.Species.cat),
+        new Trick(67, 444, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Plead", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 445, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Speech", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 446, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Peekaboo", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 450, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Jump Splat", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 443, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Spin", Trick.Version.petz2, Trick.Species.cat),
         new Trick(67, 447, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Crouch", Trick.Version.petz2, Trick.Species.cat),
-        new Trick(66, 451, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz2, Trick.Species.cat),
+        new Trick(66, 451, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz2, Trick.Species.cat),
         new Trick(66, 448, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz2, Trick.Species.cat),
         new Trick(66, 449, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Flying Leap Left", Trick.Version.petz2, Trick.Species.cat),
-        new Trick(66, 451, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz2, Trick.Species.cat),
+        new Trick(66, 451, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz2, Trick.Species.cat),
         new Trick(66, 448, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz2, Trick.Species.cat),
         new Trick(66, 449, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Flying Leap Right", Trick.Version.petz2, Trick.Species.cat),
         new Trick(98, 547, -1, -1, 0, Trick.Gesture.toy, Trick.Flavor.chicken, "Balance on Toy", Trick.Version.petz3, Trick.Species.dog),
@@ -82,27 +85,27 @@ public class TrickHelper
         new Trick(100, 540, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Rollover Left", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 542, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Sidestep Left", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 544, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Hop Left", Trick.Version.petz3, Trick.Species.dog),
-        new Trick(100, 545, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz3, Trick.Species.dog),
+        new Trick(100, 545, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 546, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz3, Trick.Species.dog),
         new Trick(103, 3, -1, -1, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Slide on Wall Left", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 539, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Rollover Right", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 541, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Sidestep Right", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 543, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Hop Right", Trick.Version.petz3, Trick.Species.dog),
-        new Trick(100, 545, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz3, Trick.Species.dog),
+        new Trick(100, 545, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz3, Trick.Species.dog),
         new Trick(100, 546, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz3, Trick.Species.dog),
         new Trick(103, 4, -1, -1, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Slide on Wall Right", Trick.Version.petz3, Trick.Species.dog),
         new Trick(101, 551, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Backflip", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 552, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Bounce", Trick.Version.petz3, Trick.Species.cat),
-        new Trick(101, 554, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Beg", Trick.Version.petz3, Trick.Species.cat),
+        new Trick(101, 554, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Plead", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 555, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Speech", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 556, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Peekaboo", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 560, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Jump Splat", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 553, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Spin", Trick.Version.petz3, Trick.Species.cat),
         new Trick(101, 557, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Crouch", Trick.Version.petz3, Trick.Species.cat),
-        new Trick(100, 561, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz3, Trick.Species.cat),
+        new Trick(100, 561, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz3, Trick.Species.cat),
         new Trick(100, 558, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz3, Trick.Species.cat),
         new Trick(100, 559, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Flying Leap Left", Trick.Version.petz3, Trick.Species.cat),
-        new Trick(100, 561, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz3, Trick.Species.cat),
+        new Trick(100, 561, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz3, Trick.Species.cat),
         new Trick(100, 558, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz3, Trick.Species.cat),
         new Trick(100, 559, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Flying Leap Right", Trick.Version.petz3, Trick.Species.cat),
         new Trick(100, 560, -1, -1, 0, Trick.Gesture.toy, Trick.Flavor.chicken, "Balance on Toy", Trick.Version.petz4, Trick.Species.dog),
@@ -132,27 +135,27 @@ public class TrickHelper
         new Trick(102, 553, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Rollover Left", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 555, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Sidestep Left", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 557, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Hop Left", Trick.Version.petz4, Trick.Species.dog),
-        new Trick(102, 558, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz4, Trick.Species.dog),
+        new Trick(102, 558, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 559, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz4, Trick.Species.dog),
         new Trick(105, 3, -1, -1, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Slide on Wall Left", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 552, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Rollover Right", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 554, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Sidestep Right", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 556, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Hop Right", Trick.Version.petz4, Trick.Species.dog),
-        new Trick(102, 558, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz4, Trick.Species.dog),
+        new Trick(102, 558, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz4, Trick.Species.dog),
         new Trick(102, 559, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz4, Trick.Species.dog),
         new Trick(105, 4, -1, -1, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Slide on Wall Right", Trick.Version.petz4, Trick.Species.dog),
         new Trick(103, 564, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Backflip", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 565, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Bounce", Trick.Version.petz4, Trick.Species.cat),
-        new Trick(103, 567, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Beg", Trick.Version.petz4, Trick.Species.cat),
+        new Trick(103, 567, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Plead", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 568, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Speech", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 569, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Peekaboo", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 573, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Jump Splat", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 566, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Spin", Trick.Version.petz4, Trick.Species.cat),
         new Trick(103, 570, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Crouch", Trick.Version.petz4, Trick.Species.cat),
-        new Trick(102, 574, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz4, Trick.Species.cat),
+        new Trick(102, 574, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz4, Trick.Species.cat),
         new Trick(102, 571, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz4, Trick.Species.cat),
         new Trick(102, 572, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Flying Leap Left", Trick.Version.petz4, Trick.Species.cat),
-        new Trick(102, 574, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz4, Trick.Species.cat),
+        new Trick(102, 574, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz4, Trick.Species.cat),
         new Trick(102, 571, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz4, Trick.Species.cat),
         new Trick(102, 572, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Flying Leap Right", Trick.Version.petz4, Trick.Species.cat),
         new Trick(99, 560, -1, -1, 0, Trick.Gesture.toy, Trick.Flavor.chicken, "Balance on Toy", Trick.Version.petz5, Trick.Species.dog),
@@ -182,32 +185,60 @@ public class TrickHelper
         new Trick(101, 553, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Rollover Left", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 555, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Sidestep Left", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 557, -1, 0, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Hop Left", Trick.Version.petz5, Trick.Species.dog),
-        new Trick(101, 558, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz5, Trick.Species.dog),
+        new Trick(101, 558, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 559, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz5, Trick.Species.dog),
         new Trick(104, 3, -1, -1, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Slide on Wall Left", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 552, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Rollover Right", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 554, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Sidestep Right", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 556, -1, 0, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Hop Right", Trick.Version.petz5, Trick.Species.dog),
-        new Trick(101, 558, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz5, Trick.Species.dog),
+        new Trick(101, 558, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz5, Trick.Species.dog),
         new Trick(101, 559, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz5, Trick.Species.dog),
         new Trick(104, 4, -1, -1, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Slide on Wall Right", Trick.Version.petz5, Trick.Species.dog),
         new Trick(102, 564, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Backflip", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 565, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Bounce", Trick.Version.petz5, Trick.Species.cat),
-        new Trick(102, 567, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Beg", Trick.Version.petz5, Trick.Species.cat),
+        new Trick(102, 567, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Plead", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 568, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Speech", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 569, -1, -1, 0, Trick.Gesture.up, Trick.Flavor.chicken, "Peekaboo", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 573, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Jump Splat", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 566, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Spin", Trick.Version.petz5, Trick.Species.cat),
         new Trick(102, 570, -1, -1, 0, Trick.Gesture.down, Trick.Flavor.chicken, "Crouch", Trick.Version.petz5, Trick.Species.cat),
-        new Trick(101, 574, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Left Somersault", Trick.Version.petz5, Trick.Species.cat),
+        new Trick(101, 574, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Somersault Left", Trick.Version.petz5, Trick.Species.cat),
         new Trick(101, 571, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Jump Left", Trick.Version.petz5, Trick.Species.cat),
         new Trick(101, 572, -1, 64, 0, Trick.Gesture.left, Trick.Flavor.chicken, "Flying Leap Left", Trick.Version.petz5, Trick.Species.cat),
-        new Trick(101, 574, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Right Somersault", Trick.Version.petz5, Trick.Species.cat),
+        new Trick(101, 574, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Somersault Right", Trick.Version.petz5, Trick.Species.cat),
         new Trick(101, 571, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Jump Right", Trick.Version.petz5, Trick.Species.cat),
         new Trick(101, 572, -1, -64, 0, Trick.Gesture.right, Trick.Flavor.chicken, "Flying Leap Right", Trick.Version.petz5, Trick.Species.cat)
     };
     
-    public static Trick searchForTrickBy(int plan, int action, Trick.Gesture gesture)
+    public static ArrayList<Trick> getTricks(Trick.Version version, Trick.Gesture gesture, Trick.Species species)
+    {
+        ArrayList<Trick> tricks = new ArrayList<Trick>();
+        
+        for(Trick z : allTricks)
+        {
+            if(z.ver == version && z.gesture == gesture && z.species == species)
+            {
+                tricks.add(z);
+            }
+        }
+        
+        return tricks;
+    }
+    
+    public static Trick getTrickBy(Trick.Version version, Trick.Gesture gesture, Trick.Species species)
+    {
+        for(Trick z : allTricks)
+        {
+            if(z.ver == version && z.gesture == gesture && z.species == species)
+            {
+                return z;
+            }
+        }
+        
+        return null;
+    }
+    
+    public static Trick getTrickBy(int plan, int action, Trick.Gesture gesture)
     {
         for(Trick z : allTricks)
         {
@@ -220,11 +251,12 @@ public class TrickHelper
         return null;
     }
     
-    public static Trick searchForTrickBy(String name, Trick.Version ver)
+    public static Trick getTrickBy(String name, Trick.Version ver, Trick.Species spe)
     {
         for(Trick z : allTricks)
         {
-            if(z.name.equals(name) && z.ver == ver)
+            if(z.name.equals(name) && z.ver == ver 
+                    && (z.species == spe || z.species == Trick.Species.both))
             {
                 return z;
             }

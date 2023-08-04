@@ -33,6 +33,8 @@ public class Trick
     Version ver;
     Species species;
     
+    String notes;
+    
     
     public Trick(int planID, int actionID, int direction, int angle, int association, 
             Gesture gesture, Flavor flavor, String trickName, Version gameVersion, Species species)
@@ -49,13 +51,15 @@ public class Trick
         this.name = trickName;
         this.ver = gameVersion;
         this.species = species;
+        
+        this.notes = "";
     }
     
     public Trick(int planID, int actionID, int direction, int angle, int association, Gesture gesture, Flavor flavor)
     {
         this(planID, actionID, direction, angle, association, gesture, flavor, "Unknown", Version.unknown, Species.unknown);
         
-        Trick trick = TrickHelper.searchForTrickBy(planID, actionID, gesture);
+        Trick trick = TrickHelper.getTrickBy(planID, actionID, gesture);
         
         if(trick != null)
         {
@@ -73,31 +77,45 @@ public class Trick
         
         return name + d + species + d +ver + d + flavor + d + gesture + d
                 + plan + d + action + d 
-                + direction + d + angle + d + association;
+                + direction + d + angle + d + association + d + notes;
     }
     
-    public void fixTrickBy(Version version)
+    public void fixTrickBy(Species checkSpecies, Version checkVersion)
     {
-        Trick goodTrick = TrickHelper.searchForTrickBy(name, version);
-        
-        if(goodTrick != null)
+        // if the association number is messed up at all
+        if(!( 10 <= association && association <= 100))
         {
-            // change plan ID, action ID, and version
-            plan = goodTrick.plan;
-            action = goodTrick.action;
-            ver = version;
-
-            // check if the direction and angle are different and print something
-            if(goodTrick.direction != direction || goodTrick.angle != angle
-                    || !( 10 <= association && association <= 100) )
-            {
-                System.out.println("Expected Trick: " + goodTrick);
-                System.out.println("Recieved Trick: " + this);
-            }
+            association = 10;
+        }
+        
+        Trick goodTrick;
+        
+        // check wrong species, will need to get a new trick
+        if( species != Trick.Species.both && species != checkSpecies )
+        {
+            goodTrick = TrickHelper.getTrickBy(checkVersion, gesture, checkSpecies);
+            notes = "fixed species";
         }
         else
         {
-            System.out.println("Unknown Trick: " + this);
+            goodTrick = TrickHelper.getTrickBy(name, checkVersion, checkSpecies);
         }
+
+        // as long as the trick isn't null from this...
+        if(goodTrick != null)
+        {
+            // change the entire trick data, except association
+            plan = goodTrick.plan;
+            action = goodTrick.action;
+            direction = goodTrick.direction;
+            angle = goodTrick.angle;
+            name = goodTrick.name;
+            ver = goodTrick.ver;
+            species = goodTrick.species;
+        }
+        else
+        {
+            notes = "unknown trick";
+        }  
     }
 }
